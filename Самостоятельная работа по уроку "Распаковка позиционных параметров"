@@ -1,0 +1,33 @@
+def print_params(a=1, b='строка', c=True):
+    print(f'a={a}, b={b}, c={c}')
+print_params()
+# Output: a=1, b=строка, c=True
+print_params(10)
+# Output: a=10, b=строка, c=True
+
+print_params(20, 'новая строка')
+# Output: a=20, b=новая строка, c=True
+
+print_params(30, 'третья строка', False)
+# Output: a=30, b=третья строка, c=False
+print_params(b=25)
+# Output: a=1, b=25, c=True
+print_params(c=[1,2,3])
+# Output: a=1, b=строка, c=[1, 2, 3]
+
+values_list = [100, 'список', False]
+
+values_dict = {
+    'a': 200,
+    'b': 'словарь',
+    'c': None
+}
+print_params(*values_list)
+# Output: a=100, b=список, c=False
+
+print_params(**values_dict)
+# Output: a=200, b=словарь, c=None
+
+values_list_2 = ['распакованный список', 300]
+print_params(*values_list_2, 42)
+# Output: a=распакованный список, b=300, c=42
